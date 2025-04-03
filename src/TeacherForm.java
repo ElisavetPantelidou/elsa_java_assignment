@@ -2,35 +2,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class StudentForm extends JFrame {
+public class TeacherForm extends JFrame {
 
-    public StudentForm(MainForm mainForm) {
-        setTitle("Student Management");
+    public TeacherForm(MainForm mainForm) {
+        setTitle("Teacher Management");
         setSize(300, 250);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // custom behavior
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Custom close behavior
 
         // Handle X close
         addWindowListener(new WindowAdapter() {
-            @Override
             public void windowClosing(WindowEvent e) {
                 mainForm.setVisible(true);
                 dispose();
             }
         });
 
-        JButton insertBtn = new JButton("Insert New Student");
-        JButton searchBtn = new JButton("Search / Edit Student");
+        JButton insertBtn = new JButton("Insert New Teacher");
+        JButton searchBtn = new JButton("Search / Edit Teacher");
         JButton backBtn = new JButton("Back to Main Menu");
 
         insertBtn.addActionListener(e -> {
-            new StudentEntryForm(this);
-            setVisible(false); // Hide this form
+            new TeacherEntryForm(this);
+            setVisible(false);
         });
 
         searchBtn.addActionListener(e -> {
-            new StudentUpdateForm(this);
-            setVisible(false); // Hide this form
+            new TeacherUpdateForm(this);
+            setVisible(false);
         });
 
         backBtn.addActionListener(e -> {
