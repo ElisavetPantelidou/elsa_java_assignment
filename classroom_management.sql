@@ -6,9 +6,3 @@ CREATE TABLE `students` (
   `student_lname` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`student_id`)
 )
-CREATE TABLE `teachers` (
-  `teacher_id` int(11) NOT NULL,
-  `teacher_fname` varchar(50) DEFAULT NULL,
-  `teacher_lname` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`teacher_id`)
-)
